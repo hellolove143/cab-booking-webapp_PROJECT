@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: address-book-deployment
 spec:
-  replicas: 7
+  replicas: 5
   selector:
     matchLabels:
        app: address-book
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app-container
-        image: sarojdevops/cab-booking-app:68
+        image: sarojdevops/cab-booking-app:79
         ports:
         - containerPort: 8080
 ---
