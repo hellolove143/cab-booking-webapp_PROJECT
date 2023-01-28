@@ -1,5 +1,9 @@
-# this is shell scipt to automatic get update in the manifest file
-
+##############################################################
+# AUTHOR : SAROJ EKKA
+# TASK : TO UPDATE THE MANIFEST FILE
+# WORK : AUTOMATIC TIGGER THE ARGOCD "GitOps"
+# USAGE : with any script reusable  for gitops
+##############################################################
 # Remove the current tag from the deployment file
 sed -i 's/\(image: sarojdevops\/cab-booking-app:\).*/\1/' deployment.yaml
 
