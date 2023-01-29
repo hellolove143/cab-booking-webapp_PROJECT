@@ -1,3 +1,10 @@
+##############################################################
+# AUTHOR : SAROJ EKKA
+# TASK : TO UPDATE THE MANIFEST FILE
+# WORK : AUTOMATIC TIGGER THE ARGOCD "GitOps"
+# USAGE : with any script reusable  for gitops
+##############################################################
+# Remove the current tag from the deployment file
 #!/bin/bash
 
 # Define the image name
