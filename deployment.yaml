@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app-container
-        image: sarojdevops/cab-booking-app:79
+        image: sarojdevops/cab-booking-app:99
         ports:
         - containerPort: 8080
 ---
