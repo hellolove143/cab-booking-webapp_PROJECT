@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+    stages {
+        stage ('hello_world') {
+            steps {
+                echo 'hello_world successfully' 
+            }
+        }
+        stage ('git checkout') {
+            steps{
+                
+                git "https://github.com/ekka007/cab-booking-webapp_PROJECT.git" 
+            }
+        }    
+        stage ('Push the changed deployment file to Git') {
+            steps {
+                script {
+
+                    sh """
+                    // code checkout to " deployment " BRANCH //
+                     git checkout deployment
+                     sleep 5
+
+                    // adding user to repo this process is important // 
+                     git config --global user.name "saroj"
+                     sleep 5
+                     git config --global user.email "saroj-email@example.com"
+                     sleep 5
+
+                    // Running shell script that execute and update inside deployment file // 
+                     bash ./2ndversion-of-update.sh
+                     sleep 2
+
+                    // when changes inside version file // 
+                     git add .
+                     sleep 2
+
+                    // commiting to local repo //
+                     git commit -m "commit message"
+                     sleep 2
+                    """
+                    
+                }
+            }
+        }    
+        stage ('final-push') {
+            steps {
+
+                // SET-GLOBAL-TOOL-CREDENTIAL WITH GITHUB TOCKEN //
+                // generate with Sinppet Generator //
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+    // some block
+
+                // this command is git to push to target Repo // // use this code anywhere //
+                sh 'git push https://ekka007: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@github.com/ekka007/cab-booking-webapp_PROJECT.git deployment'
+                }
+            }
+        }  
+    }
+}   
