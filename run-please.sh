@@ -20,9 +20,9 @@ git commit -m "commit message"
 # Store the credentials in an environment variable
 CREDENTIALS=$(cat <<-END
 username= ekka007
-password= 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
+password= ghp_z8AaznSXkRGBfnxpRcziwYiGAqMIWW3ajtG
 END
 )
 
 # Push the changes to the remote repository using the stored credentials
-echo $CREDENTIALS | https://ekka007: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@github.com/ekka007/cab-booking-webapp_PROJECT.git deployment
+echo $CREDENTIALS | git push https://ekka007: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@github.com/ekka007/cab-booking-webapp_PROJECT.git deployment
