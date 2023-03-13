@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app-container
-        image: hellolove123/cab-booking-app:10
+        image: hellolove123/cab-booking-app:5
         ports:
         - containerPort: 8080
 ---
