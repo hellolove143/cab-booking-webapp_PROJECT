@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: address-book-deployment
 spec:
-  replicas: 
+  replicas: 5
   selector:
     matchLabels:
        app: address-book
